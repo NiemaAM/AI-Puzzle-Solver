@@ -1,12 +1,10 @@
-[![Python][python.org]][Python-url]
+[![Python](https://img.shields.io/badge/Python-3.9-blue.svg)](https://www.python.org)
 
 # AI Puzzle Solver Using Python
-The 8-puzzle game, often used as a foundational example to explore search algorithms and 
-heuristics, is a well-known algorithm in artificial intelligence and computer science. The puzzle is a 3x3 
-grid containing 8 numbered tiles and a blank space allowing adjacent tiles to slide into it. The goal is to 
-rearrange the tiles into a fixed goal state from any starting configuration where the tiles are in 
-numerical order with the blank space first. This puzzle is a good study model for heuristic search 
-strategies.
+* The 8-puzzle game, often used as a foundational example to explore search algorithms and heuristics, is a well-known algorithm in artificial intelligence and computer science. 
+* The puzzle is a 4x4 grid containing 15 numbered tiles and a blank space allowing adjacent tiles to slide into it.
+* The goal is to rearrange the tiles into a fixed goal state from any starting configuration where the tiles are in numerical order with the blank space first. 
+* This puzzle is a good study model for heuristic search strategies.
 
 <!-- TABLE OF CONTENTS -->
 <details>
