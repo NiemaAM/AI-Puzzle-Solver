@@ -1,3 +1,4 @@
+import os
 from puzzle import Puzzle
 import time 
 from collections import deque
@@ -8,7 +9,7 @@ class Search:
     @staticmethod
     def Astar(board, heuristic):
         """Use A* to solve the puzzle with the specified heuristic."""
-        print(f'\n\n>>>Attempting to solve the puzzle using A* with {heuristic.__name__}...')
+        print(f'\n>>>Attempting to solve the puzzle using A* with {heuristic.__name__}...')
         start_state = tuple(board)
         goal_state = tuple(Puzzle.getNewBoard())
 
@@ -26,12 +27,13 @@ class Search:
             max_fringe_size = max(max_fringe_size, len(priority_queue))  # Update max fringe size.
 
             if current_state == goal_state:  # If the current state is the goal state.
-                """ print the moves made
+                # print the moves made
                 for move in moves_made:
+                    time.sleep(0.5)
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     Puzzle.makeMove(board, move)
                     Puzzle.displayBoard(board)
                     print()
-                """
                 print('Solved in', len(moves_made), 'moves:')  # Print the number of moves taken to solve.
                 print(', '.join(moves_made))  # Print the moves made.
                 return True, len(moves_made), expanded_nodes, max_fringe_size, time.time() - timer  # Return success and relevant statistics.
@@ -57,7 +59,7 @@ class Search:
     @staticmethod
     def BFS(board, timeout=10):
         """Attempt to solve the puzzle using Breadth-First Search."""
-        print('\n\n>>>Attempting to solve the puzzle using BFS...')
+        print('\n>>>Attempting to solve the puzzle using BFS...')
         start_state = tuple(board)
         goal_state = tuple(Puzzle.getNewBoard())
 
@@ -81,12 +83,13 @@ class Search:
             max_fringe_size = max(max_fringe_size, len(queue))
 
             if current_state == goal_state:  # If the current state is the goal state.
-                """ print the moves made
+                # print the moves made
                 for move in moves_made:
+                    time.sleep(0.5)
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     Puzzle.makeMove(board, move)
                     Puzzle.displayBoard(board)
                     print()
-                """
                 print('Solved in', len(moves_made), 'moves:')  # Print the number of moves taken to solve.
                 print(', '.join(moves_made))  # Print the moves made.
                 return True, len(moves_made), expanded_nodes, max_fringe_size, time.time() - timer  # Return success and relevant statistics.
@@ -110,7 +113,7 @@ class Search:
     @staticmethod
     def DFS(board, timeout=10):
         """Attempt to solve the puzzle using Depth-First Search."""
-        print('\n\n>>> Attempting to solve the puzzle using DFS...')
+        print('\n>>> Attempting to solve the puzzle using DFS...')
         start_state = tuple(board)
         goal_state = tuple(Puzzle.getNewBoard())
 
@@ -133,12 +136,13 @@ class Search:
             max_fringe_size = max(max_fringe_size, len(stack))
 
             if current_state == goal_state:  # If the current state is the goal state
-                """ print the moves made
+                # print the moves made
                 for move in moves_made:
+                    time.sleep(0.5)
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     Puzzle.makeMove(board, move)
                     Puzzle.displayBoard(board)
                     print()
-                """
                 print('Solved in', len(moves_made), 'moves:')  # Print the number of moves taken to solve
                 print(', '.join(moves_made))  # Print the moves made
                 return True, len(moves_made), expanded_nodes, max_fringe_size, time.time() - timer  # Return success and relevant statistics
@@ -162,7 +166,7 @@ class Search:
     @staticmethod
     def UCS(board, timeout=10):
         """Attempt to solve the puzzle using Uniform-Cost Search."""
-        print('\n\n>>>Attempting to solve the puzzle using UCS...')
+        print('\n>>>Attempting to solve the puzzle using UCS...')
         start_state = tuple(board)
         goal_state = tuple(Puzzle.getNewBoard())
 
@@ -183,12 +187,13 @@ class Search:
             max_fringe_size = max(max_fringe_size, len(priority_queue))  # Update max fringe size
 
             if current_state == goal_state:  # If the current state is the goal state
-                """ print the moves made
+                # print the moves made
                 for move in moves_made:
+                    time.sleep(0.5)
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     Puzzle.makeMove(board, move)
                     Puzzle.displayBoard(board)
                     print()
-                """
                 print('Solved in', len(moves_made), 'moves:')  # Print the number of moves taken to solve
                 print(', '.join(moves_made))  # Print the moves made
                 return True, len(moves_made), expanded_nodes, max_fringe_size, time.time() - timer  # Return success and relevant statistics
@@ -208,34 +213,32 @@ class Search:
                     heapq.heappush(priority_queue, (new_cost, new_state_tuple, moves_made + [move], depth + 1))
 
         return False, 0, expanded_nodes, max_fringe_size, time.time() - timer  # Unable to find a solution
-
-
-
-
  
-    # DFS - recursive
+    # DFS - itterative deepening
     def DFSR(board, maxMoves=10):
         """Attempt to solve the puzzle in `board` in at most `maxMoves` moves."""
-        print('\n\n>>>Attempting to solve the puzzle using Recursive DFS in at most', maxMoves, 'moves...')
+        print('\n>>>Attempting to solve the puzzle using Recursive DFS in at most', maxMoves, 'moves...')
         
         timer = time.time()
         moves_made = []
         expanded_nodes = 0 
         max_fringe_size = 0
         solved = Search.backtrack(board, moves_made, maxMoves, None)
-
+        
         if solved:
-            """ print the moves made
-                for move in moves_made:
-                    Puzzle.makeMove(board, move)
-                    Puzzle.displayBoard(board)
-                    print()
-            """
+            # print the moves made
+            for move in moves_made:
+                time.sleep(0.5)
+                os.system('cls' if os.name == 'nt' else 'clear')
+                Puzzle.makeMove(board, move)
+                Puzzle.displayBoard(board)
+                print()
             print('Solved in', len(moves_made), 'moves:')  # Print the number of moves taken to solve
             print(', '.join(moves_made))  # Print the moves made
             return True, len(moves_made), expanded_nodes, max_fringe_size, time.time() - timer # Puzzle was solved.
         else:
             return False, len(moves_made), expanded_nodes, max_fringe_size, time.time() - timer # Unable to solve in maxMoves moves.
+    
     # backtrack
     def backtrack(board, movesMade, movesRemaining, prevMove):
         """A recursive function that attempts all possible moves until 
