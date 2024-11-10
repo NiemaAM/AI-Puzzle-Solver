@@ -131,7 +131,7 @@ python main.py
             Puzzle.makeMove(board, random.choice(validMoves))  # Randomly make a move.
         return board
 ```
-### A* Heuristics
+### A Star Heuristics
 ### h1: Misplaced Tiles heuristic
 ```python
     def misplacedTiles(board):
@@ -201,7 +201,7 @@ python main.py
         return conflict + Puzzle.manhattanDistance(board)
 ```
 ## Search methods
-### A* Search
+### A Star Search
 ```python
     def Astar(board, heuristic):
         """Use A* to solve the puzzle with the specified heuristic."""
