@@ -16,9 +16,8 @@ strategies.
       <a href="#run-the-project">Run the Project</a>
     </li>
     <li>
-      <a href="#project-structure">Project Structure</a>
+      <a href="#puzzle-building">Puzzle Building</a>
       <ul>
-        <li><a href="#puzzle-building">Puzzle Building</a></li>
         <li><a href="#constants">Constants</a></li>
         <li><a href="#generate-a-new-board">Generate a New Board</a></li>
         <li><a href="#get-moves-on-the-puzzle">Get Moves on the Puzzle</a></li>
@@ -55,9 +54,8 @@ or run the project using:
 ```bash
 python main.py
 ```
-## Project Structure
-### Puzzle Building
-#### Constants
+## Puzzle Building
+### Constants
 ```python
     DIFFICULTY = 50  # Set the number of random moves the puzzle starts with.
     SIZE = 4  # Define the board dimensions as NxN.
@@ -67,7 +65,7 @@ python main.py
     LEFT = 'left' # Move left
     RIGHT = 'right' # Move right
 ```
-#### Generate a new borad
+### Generate a new borad
 ```python
     def getNewBoard():
         """Return a list that represents a new tile puzzle."""
@@ -84,7 +82,7 @@ python main.py
                 if board[y * SIZE + x] == BLANK:  # Check if the current tile is blank.
                     return [x, y]  # Return the coordinates of the blank tile.
 ```
-#### Get Moves on the puzzle
+### Get Moves on the puzzle
 ```python
     def makeMove(board, move):
         """Make the move on the board."""
@@ -136,7 +134,7 @@ python main.py
         return board
 ```
 ### A* Heuristics
-#### h1: Misplaced Tiles heuristic
+### h1: Misplaced Tiles heuristic
 ```python
     def misplacedTiles(board):
         """Count the number of tiles that are not in the goal position."""
@@ -146,7 +144,7 @@ python main.py
                 misplaced += 1  # Increment the count if it's misplaced.
         return misplaced  # Return the count of misplaced tiles.
 ```
-#### h2: Euclidean Distance heuristic
+### h2: Euclidean Distance heuristic
 ```python
     def euclideanDistance(board):
         # Σ(sqrt()(x - target_x)² + (y - target_y)²)
@@ -159,7 +157,7 @@ python main.py
                 distance += ((x - target_x) ** 2 + (y - target_y) ** 2) ** 0.5  # Add Euclidean distance to total.
         return distance
 ```
-#### h3: Manhattan distance heuristic
+### h3: Manhattan distance heuristic
 ```python
     def manhattanDistance(board):
         # Σ(|x - target_x| + |y - target_y|)
@@ -172,7 +170,7 @@ python main.py
                 distance += abs(x - target_x) + abs(y - target_y)  # Add the distance to the total.
         return distance 
 ```
-#### h4: Number of tiles out of row and column heuristics
+### h4: Number of tiles out of row and column heuristics
 ```python
     def rowColumnHeuristic(board):
         # (Number of tiles out of row) + (Number of tiles out of column)
@@ -189,7 +187,7 @@ python main.py
                     out_of_col += 1
         return out_of_row + out_of_col
 ```
-#### h5: Linear Conflict heuristic
+### h5: Linear Conflict heuristic
 ```python
     def linearConflict(board):
         # Σ(conflicts) + Manhattan Distance
@@ -204,8 +202,8 @@ python main.py
                         conflict += 2  # Each pair of tiles in conflict adds 2 to the conflict count.
         return conflict + Puzzle.manhattanDistance(board)
 ```
-### Search methods
-#### A* Search
+## Search methods
+### A* Search
 ```python
     def Astar(board, heuristic):
         """Use A* to solve the puzzle with the specified heuristic."""
@@ -255,7 +253,7 @@ python main.py
 
         return False, 0, expanded_nodes, max_fringe_size, time.time() - timer  # Unable to find a solution.
 ```
-#### DFS Search
+### DFS Search
 ```python
     def DFS(board, timeout=10):
         """Attempt to solve the puzzle using Depth-First Search."""
@@ -308,7 +306,7 @@ python main.py
 
         return False, 0, expanded_nodes, max_fringe_size, time.time() - timer  # Unable to find a solution
 ```
-#### DFS with itterative deepening Search
+### DFS with itterative deepening Search
 ```python
     def DFSR(board, maxMoves=10):
         """Attempt to solve the puzzle in `board` in at most `maxMoves` moves."""
@@ -358,7 +356,7 @@ python main.py
             movesMade.pop() # Remove the last move since it was undone.
         return False # BASE CASE - Unable to find a solution.
 ```
-#### BFS Search
+### BFS Search
 ```python
     def BFS(board, timeout=10):
         """Attempt to solve the puzzle using Breadth-First Search."""
@@ -412,7 +410,7 @@ python main.py
 
         return False, 0, expanded_nodes, max_fringe_size, time.time() - timer  # Unable to find a solution.
 ```
-#### UCS Search
+### UCS Search
 ```python
     def UCS(board, timeout=10):
         """Attempt to solve the puzzle using Uniform-Cost Search."""
