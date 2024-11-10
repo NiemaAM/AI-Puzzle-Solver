@@ -46,9 +46,9 @@
 
 
 ## Run the Project
-Online Demo: [Demo here](https://nam.neetocode.com/niema-alaoui-mdaghri/01JCBW62Q087G06SXNH2F2XR0D)
-
-or run the project using:
+Try the code Online: [HERE](https://nam.neetocode.com/niema-alaoui-mdaghri/01JCBW62Q087G06SXNH2F2XR0D)
+Or 
+Run the project using command prompt:
 ```bash
 python main.py
 ```
