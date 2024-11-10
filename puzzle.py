@@ -3,11 +3,11 @@ import random
 
 DIFFICULTY = 50  # Set the number of random moves the puzzle starts with.
 SIZE = 4  # Define the board dimensions as NxN.
-BLANK = 0 
-UP = 'up'
-DOWN = 'down'
-LEFT = 'left'
-RIGHT = 'right'
+BLANK = 0 # Define the blank tile
+UP = 'up' # Move up
+DOWN = 'down' # Move down
+LEFT = 'left' # Move left
+RIGHT = 'right' # Move right
 
 class Puzzle:
     @staticmethod
