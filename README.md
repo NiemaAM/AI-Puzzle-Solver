@@ -18,29 +18,35 @@ strategies.
     <li>
       <a href="#project-structure">Project Structure</a>
       <ul>
-        <li><a href="#puzzle-building">Puzzle Building</a>
-            <li><a href="#constants">Constants</a></li>
-            <li><a href="#generate-a-new-borad">Generate a new borad</a></li>
-            <li><a href="#get-moves-on-the-puzzle">Get Moves on the puzzle</a></li>
-        </li>
-        <li><a href="#a*-heuristics">A* Heuristics</a>
-            <li><a href="#h1:-misplaced-tiles-heuristic">h1: Misplaced Tiles heuristic</a></li>
-            <li><a href="#h2:-euclidean-distance-heuristic">h2: Euclidean Distance heuristic</a></li>
-            <li><a href="#h3:-manhattan-distance-heuristic">h3: Manhattan distance heuristic</a></li>
-            <li><a href="#h4:-number-of-tiles-out-of-row-and-column-heuristics">h4: Number of tiles out of row and column heuristics</a></li>
-            <li><a href="#h5:-linear-conflict-heuristic">h5: Linear Conflict heuristic</a></li>
-        </li>
-        <li><a href="#search-methods">Search methods</a>
-            <li><a href="#a*-search">A* Search</a></li>
-            <li><a href="#dfs-search">DFS Search</a></li>
-            <li><a href="#dfs-with-itterative-deepening-search">DFS with itterative deepening Search</a></li>
-            <li><a href="#bfs-search">BFS Search</a></li>
-            <li><a href="#ucs-search">UCS Search</a></li>
-        </li>
+        <li><a href="#puzzle-building">Puzzle Building</a></li>
+        <li><a href="#constants">Constants</a></li>
+        <li><a href="#generate-a-new-board">Generate a New Board</a></li>
+        <li><a href="#get-moves-on-the-puzzle">Get Moves on the Puzzle</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#a-star-heuristics">A* Heuristics</a>
+      <ul>
+        <li><a href="#h1-misplaced-tiles-heuristic">h1: Misplaced Tiles Heuristic</a></li>
+        <li><a href="#h2-euclidean-distance-heuristic">h2: Euclidean Distance Heuristic</a></li>
+        <li><a href="#h3-manhattan-distance-heuristic">h3: Manhattan Distance Heuristic</a></li>
+        <li><a href="#h4-number-of-tiles-out-of-row-and-column-heuristic">h4: Number of Tiles Out of Row and Column Heuristic</a></li>
+        <li><a href="#h5-linear-conflict-heuristic">h5: Linear Conflict Heuristic</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#search-methods">Search Methods</a>
+      <ul>
+        <li><a href="#a-star-search">A* Search</a></li>
+        <li><a href="#dfs-search">DFS Search</a></li>
+        <li><a href="#dfs-with-iterative-deepening-search">DFS with Iterative Deepening Search</a></li>
+        <li><a href="#bfs-search">BFS Search</a></li>
+        <li><a href="#ucs-search">UCS Search</a></li>
       </ul>
     </li>
   </ol>
 </details>
+
 
 ## Run the Project
 Online Demo: [Demo here](https://nam.neetocode.com/niema-alaoui-mdaghri/01JCBW62Q087G06SXNH2F2XR0D)
