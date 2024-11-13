@@ -1,4 +1,4 @@
-[![Python](https://img.shields.io/badge/Python-3.9-blue.svg)](https://www.python.org)
+![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white)
 
 # AI Puzzle Solver Using Python
 * The 8-puzzle game, often used as a foundational example to explore search algorithms and heuristics, is a well-known algorithm in artificial intelligence and computer science. 
