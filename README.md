@@ -46,8 +46,10 @@
 
 
 ## Run the Project
-Try the code Online: [HERE](https://nam.neetocode.com/niema-alaoui-mdaghri/01JCBW62Q087G06SXNH2F2XR0D)
-Or 
+> [!TIP]
+> 
+> [![Python](https://img.shields.io/badge/-click%20here%20to%20Run%20the%20code%20online!-3776AB?logo=python&style=for-the-badge&logoColor=white)](https://nam.neetocode.com/niema-alaoui-mdaghri/01JCBW62Q087G06SXNH2F2XR0D)
+
 Run the project using command prompt:
 ```bash
 python main.py
